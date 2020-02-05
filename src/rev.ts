@@ -38,10 +38,11 @@ export class Revolut {
         const payload = {
             "iss": issuer,
             "sub": clientId,
-            "aud": aud
-        }
-
-        return sign(payload, privateKey, { algorithm: 'RS256', expiresIn: 60 * 60 });
+            "aud": aud,
+			iat: Math.floor(Date.now() / 1000) - 60,
+			exp: Math.floor(Date.now() / 1000) + (60 * 60),
+        }		
+        return sign(payload, privateKey, { algorithm: 'RS256' });
     }
 
     async getToken(clientId: string, code: string,jwtToken:string):Promise<IRevolutOAuthResponse> {
