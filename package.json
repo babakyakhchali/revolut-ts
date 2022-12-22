@@ -17,7 +17,7 @@
     "@types/jsonwebtoken": "^8.3.6",
     "@types/request-promise": "^4.1.45",
     "dotenv": "^8.2.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
   },
